@@ -1,48 +1,32 @@
 ﻿namespace MeadowWorkshop
 {
-    using System;
-    using System.Threading;
     using Meadow;
     using Meadow.Devices;
-    using Meadow.Hardware;
+    using Meadow.Library;
+    using Meadow.Library.Peripherals;
+    using System;
+    using System.Threading;
 
     public class MeadowApp : App<F7Micro, MeadowApp>
     {
-        private IDigitalOutputPort redLed;
-        private IDigitalOutputPort blueLed;
-        private IDigitalOutputPort greenLed;
-
         public MeadowApp()
         {
-            this.ConfigurePorts();
-            this.BlinkLeds();
+            this.CycleLeds();
         }
 
-        public void ConfigurePorts()
+        public void CycleLeds()
         {
-            Console.WriteLine("Creating Outputs...");
-            this.redLed = Device.CreateDigitalOutputPort(Device.Pins.OnboardLedRed);
-            this.blueLed = Device.CreateDigitalOutputPort(Device.Pins.OnboardLedBlue);
-            this.greenLed = Device.CreateDigitalOutputPort(Device.Pins.OnboardLedGreen);
-        }
+            const int wait = 200;
 
-        public void BlinkLeds()
-        {
-            bool state = false;
+            using OnboardLed led = new OnboardLed(Device);
+
+            RgbColor currentColor = RgbColor.None;
 
             while (true)
             {
-                const int wait = 200;
-
-                state = !state;
-
-                Console.WriteLine($"State: {state}");
-
-                this.redLed.State = state;
-                Thread.Sleep(wait);
-                this.blueLed.State = state;
-                Thread.Sleep(wait);
-                this.greenLed.State = state;
+                currentColor = currentColor.GetNext();
+                Console.WriteLine($"Setting color to {currentColor}.");
+                led.SetColor(currentColor);
                 Thread.Sleep(wait);
             }
         }
