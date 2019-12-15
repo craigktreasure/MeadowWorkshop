@@ -2,6 +2,7 @@
 {
     using Meadow;
     using Meadow.Devices;
+    using Meadow.Foundation;
     using Meadow.Foundation.Leds;
     using Meadow.Library;
     using Meadow.Library.Peripherals;
@@ -13,7 +14,8 @@
         public MeadowApp()
         {
             //this.CycleLeds();
-            this.CycleLedsMeadowFoundation();
+            //this.CycleLedsMeadowFoundation();
+            this.CycleLedsMeadowFoundationPwm();
         }
 
         public void CycleLeds()
@@ -55,6 +57,32 @@
                 Console.WriteLine($"Setting color to {currentColor}.");
                 led.SetColor(currentColor);
                 Thread.Sleep(wait);
+            }
+        }
+
+        private void CycleLedsMeadowFoundationPwm()
+        {
+            RgbPwmLed rgbPwmLed = new RgbPwmLed(Device,
+                redPwmPin: Device.Pins.OnboardLedRed,
+                greenPwmPin: Device.Pins.OnboardLedGreen,
+                bluePwmPin: Device.Pins.OnboardLedBlue);
+
+            // alternate between blinking and pulsing the LED
+            while (true)
+            {
+                for (int i = 0; i < 360; i++)
+                {
+                    double hue = ((double)i / 360F);
+                    Console.WriteLine(hue.ToString());
+
+                    // set the color of the RGB
+                    rgbPwmLed.SetColor(Color.FromHsba(((double)i / 360F), 1, 1));
+
+                    // for a fun, fast rotation through the hue spectrum:
+                    //Thread.Sleep(1);
+                    // for a gentle walk through the forest of colors;
+                    Thread.Sleep(18);
+                }
             }
         }
     }
