@@ -73,10 +73,9 @@
                 for (int i = 0; i < 360; i++)
                 {
                     double hue = ((double)i / 360F);
-                    Console.WriteLine(hue.ToString());
 
                     // set the color of the RGB
-                    rgbPwmLed.SetColor(Color.FromHsba(((double)i / 360F), 1, 1));
+                    rgbPwmLed.SetColor(Color.FromHsba(hue, 1, 1));
 
                     // for a fun, fast rotation through the hue spectrum:
                     //Thread.Sleep(1);
