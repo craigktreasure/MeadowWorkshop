@@ -10,7 +10,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelloMeadow", "HelloMeadow\HelloMeadow.csproj", "{36C4DC53-7B12-4694-872A-9889CA290D07}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Meadow.Library", "Meadow.Library\Meadow.Library.csproj", "{488337C7-6A7B-4833-A271-EED34906B849}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Meadow.Library", "Meadow.Library\Meadow.Library.csproj", "{488337C7-6A7B-4833-A271-EED34906B849}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HackKit.Pro.TemperatureMonitor", "HackKit.Pro.TemperatureMonitor\HackKit.Pro.TemperatureMonitor.csproj", "{07130932-1FB0-4BD6-A8C0-96BDDFFEFE19}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,6 +30,12 @@ Global
 		{488337C7-6A7B-4833-A271-EED34906B849}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{488337C7-6A7B-4833-A271-EED34906B849}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{488337C7-6A7B-4833-A271-EED34906B849}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07130932-1FB0-4BD6-A8C0-96BDDFFEFE19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07130932-1FB0-4BD6-A8C0-96BDDFFEFE19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07130932-1FB0-4BD6-A8C0-96BDDFFEFE19}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{07130932-1FB0-4BD6-A8C0-96BDDFFEFE19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07130932-1FB0-4BD6-A8C0-96BDDFFEFE19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07130932-1FB0-4BD6-A8C0-96BDDFFEFE19}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
