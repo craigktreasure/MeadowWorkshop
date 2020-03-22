@@ -7,6 +7,7 @@
     using Meadow.Foundation.Graphics;
     using Meadow.Foundation.Sensors.Temperature;
     using Meadow.Hardware;
+    using Meadow.Library.Peripherals;
     using Meadow.Peripherals.Sensors.Atmospheric;
     using System;
 
@@ -65,6 +66,9 @@
 
             this.LoadScreen();
             this.analogTemperature.StartUpdating();
+
+            OnboardLed led = new OnboardLed(Device);
+            led.SetColor(RgbColor.Green);
         }
 
         private void AnalogTemperatureUpdated(object sender, AtmosphericConditionChangeResult e)
