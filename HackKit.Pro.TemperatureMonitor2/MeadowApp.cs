@@ -4,10 +4,10 @@
     using Meadow.Devices;
     using Meadow.Foundation.Displays.Lcd;
     using Meadow.Foundation.Sensors.Atmospheric;
+    using Meadow.Library.Converters;
     using Meadow.Library.Peripherals;
     using Meadow.Peripherals.Sensors.Atmospheric;
     using System;
-    using System.Threading;
     using System.Threading.Tasks;
 
     public class MeadowApp : App<F7Micro, MeadowApp>
@@ -94,7 +94,7 @@
         private void OutputConditionsToDisplay(AtmosphericConditions conditions)
         {
             float degreesCelsius = conditions.Temperature;
-            float degreesFaranheit = ConvertTemp.ConvertCelsiusToFahrenheit(conditions.Temperature);
+            float degreesFaranheit = Temperature.ConvertCelsiusToFahrenheit(conditions.Temperature);
 
             this.display.WriteLine($"Temp: {degreesCelsius:00.0} C {degreesFaranheit:00.0} F", 1);
 
@@ -114,29 +114,6 @@
         {
             AtmosphericConditions conditions = await this.bme280.Read();
             this.OutputConditionsToConsole(conditions);
-        }
-
-        private static class ConvertTemp
-        {
-            public static double ConvertCelsiusToFahrenheit(double c)
-            {
-                return ((9.0 / 5.0) * c) + 32;
-            }
-
-            public static float ConvertCelsiusToFahrenheit(float c)
-            {
-                return ((9.0f / 5.0f) * c) + 32;
-            }
-
-            public static double ConvertFahrenheitToCelsius(double f)
-            {
-                return (5.0 / 9.0) * (f - 32);
-            }
-
-            public static float ConvertFahrenheitToCelsius(float f)
-            {
-                return (5.0f / 9.0f) * (f - 32);
-            }
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿namespace HackKit.Pro.TemeratureMonitor2
 {
     using Meadow;
+    using System;
     using System.Threading;
 
     public static class Program
@@ -15,7 +16,14 @@
             }
 
             // instantiate and run new meadow app
-            app = new MeadowApp();
+            try
+            {
+                app = new MeadowApp();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
 
             Thread.Sleep(Timeout.Infinite);
         }
