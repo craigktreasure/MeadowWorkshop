@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!-- Set common project properties. -->
+  <PropertyGroup>
+    <Configuration Condition="'$(Configuration)'==''">Debug</Configuration>
+    <LangVersion>Latest</LangVersion>
+  </PropertyGroup>
+
+  <!-- Treat warnings as errors when built in DevOps. -->
+  <PropertyGroup>
+    <MSBuildTreatWarningsAsErrors>false</MSBuildTreatWarningsAsErrors>
+    <MSBuildTreatWarningsAsErrors Condition="'$(AGENT_ID)' != ''">true</MSBuildTreatWarningsAsErrors>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <TreatWarningsAsErrors Condition="'$(AGENT_ID)' != ''">true</TreatWarningsAsErrors>
+  </PropertyGroup>
+
+  <!-- Set common package properties. -->
+  <PropertyGroup>
+    <authors>Craig Treasure</authors>
+    <owners>craigktreasure</owners>
+  </PropertyGroup>
+
+  <!-- Set common paths -->
+  <PropertyGroup>
+    <RepoRootPath>$(MSBuildThisFileDirectory)</RepoRootPath>
+    <RelativeProjectPath>$([MSBuild]::MakeRelative($(RepoRootPath), $(MSBuildProjectDirectory)))\</RelativeProjectPath>
+    <BaseIntermediateOutputPath>$(RepoRootPath)__intermediate\$(RelativeProjectPath)\</BaseIntermediateOutputPath>
+    <OutputPath>$(RepoRootPath)__output\$(Configuration)\$(RelativeProjectPath)</OutputPath>
+    <PackageOutputPath>$(RepoRootPath)__nuget\$(Configuration)\</PackageOutputPath>
+  </PropertyGroup>
+</Project>

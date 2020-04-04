@@ -1,13 +1,13 @@
-﻿<Project Sdk="Meadow.Sdk/1.1.0">
+﻿<Project Sdk="Meadow.Sdk">
   <PropertyGroup>
     <TargetFramework>net472</TargetFramework>
     <OutputType>Exe</OutputType>
     <AssemblyName>App</AssemblyName>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Meadow.Foundation" Version="0.14.1" />
-    <PackageReference Include="Meadow.Foundation.Displays.Lcd.CharacterDisplay" Version="0.7.9" />
-    <PackageReference Include="Meadow.Foundation.Sensors.Atmospheric.Bme280" Version="0.5.7" />
+    <PackageReference Include="Meadow.Foundation" />
+    <PackageReference Include="Meadow.Foundation.Displays.Lcd.CharacterDisplay" />
+    <PackageReference Include="Meadow.Foundation.Sensors.Atmospheric.Bme280" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Meadow.Library\Meadow.Library.csproj" />
