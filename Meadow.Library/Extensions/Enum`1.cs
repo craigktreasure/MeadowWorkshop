@@ -1,7 +1,7 @@
 ﻿namespace Meadow.Library
 {
     using System;
-    using System.Collections.Generic;
+    using System.Linq;
 
     public static class Enum<TEnum>
         where TEnum : Enum
@@ -9,7 +9,7 @@
         /// <summary>
         /// Retrieves an array of the names of the constants in a specified enumeration.
         /// </summary>
-        /// <returns><see cref="System.String[]"/>.</returns>
+        /// <returns><see cref="string[]"/>.</returns>
         public static string[] GetNames()
         {
             return Enum.GetNames(typeof(TEnum));
@@ -27,10 +27,20 @@
         /// <summary>
         /// Retrieves an array of the values of the constants in a specified enumeration.
         /// </summary>
-        /// <returns><see cref="IReadOnlyList{TEnum}"/>.</returns>
+        /// <returns><see cref="TEnum[]"/>.</returns>
         public static TEnum[] GetValues()
         {
             return (TEnum[])Enum.GetValues(typeof(TEnum));
+        }
+
+        /// <summary>
+        /// Retrieves an array of the values of the constants in a specified enumeration.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns><see cref="T[]"/>.</returns>
+        public static T[] GetValues<T>()
+        {
+            return Enum.GetValues(typeof(TEnum)).Cast<T>().ToArray();
         }
     }
 }
