@@ -6,7 +6,7 @@
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Meadow.Foundation" Version="0.13.2" />
+    <PackageReference Include="Meadow.Foundation" Version="0.14.1" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Meadow.Library\Meadow.Library.csproj" />
