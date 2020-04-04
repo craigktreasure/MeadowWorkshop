@@ -6,6 +6,14 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{AF3BBF30-DDC8-4224-A7D8-4AD548B84776}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		Directory.Build.props = Directory.Build.props
+		Directory.Build.targets = Directory.Build.targets
+		global.json = global.json
+		nuget.config = nuget.config
+		Packages.props = Packages.props
+		version.json = version.json
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelloMeadow", "HelloMeadow\HelloMeadow.csproj", "{36C4DC53-7B12-4694-872A-9889CA290D07}"
@@ -16,7 +24,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HackKit.Pro.TemperatureMoni
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HackKit.Pro.TemperatureMonitor2", "HackKit.Pro.TemperatureMonitor2\HackKit.Pro.TemperatureMonitor2.csproj", "{7F00E2A7-BFED-447B-9245-1F67156F76C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HackKit.Pro.TemperatureMonitor3", "HackKit.Pro.TemperatureMonitor3\HackKit.Pro.TemperatureMonitor3.csproj", "{1A7283FD-6658-4329-9763-099451D8D353}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HackKit.Pro.TemperatureMonitor3", "HackKit.Pro.TemperatureMonitor3\HackKit.Pro.TemperatureMonitor3.csproj", "{1A7283FD-6658-4329-9763-099451D8D353}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
