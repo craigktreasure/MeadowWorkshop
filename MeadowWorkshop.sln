@@ -16,6 +16,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HackKit.Pro.TemperatureMoni
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HackKit.Pro.TemperatureMonitor2", "HackKit.Pro.TemperatureMonitor2\HackKit.Pro.TemperatureMonitor2.csproj", "{7F00E2A7-BFED-447B-9245-1F67156F76C5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HackKit.Pro.TemperatureMonitor3", "HackKit.Pro.TemperatureMonitor3\HackKit.Pro.TemperatureMonitor3.csproj", "{1A7283FD-6658-4329-9763-099451D8D353}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,6 +46,12 @@ Global
 		{7F00E2A7-BFED-447B-9245-1F67156F76C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F00E2A7-BFED-447B-9245-1F67156F76C5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7F00E2A7-BFED-447B-9245-1F67156F76C5}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{1A7283FD-6658-4329-9763-099451D8D353}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A7283FD-6658-4329-9763-099451D8D353}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A7283FD-6658-4329-9763-099451D8D353}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{1A7283FD-6658-4329-9763-099451D8D353}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A7283FD-6658-4329-9763-099451D8D353}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A7283FD-6658-4329-9763-099451D8D353}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
