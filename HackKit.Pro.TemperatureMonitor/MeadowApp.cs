@@ -73,8 +73,8 @@
 
         private void AnalogTemperatureUpdated(object sender, AtmosphericConditionChangeResult e)
         {
-            float oldTemp = e.Old.Temperature / 1000;
-            float newTemp = e.New.Temperature / 1000;
+            float oldTemp = e.Old.Temperature.Value / 1000;
+            float newTemp = e.New.Temperature.Value / 1000;
 
             this.graphics.DrawText(
                 x: 48, y: 160,

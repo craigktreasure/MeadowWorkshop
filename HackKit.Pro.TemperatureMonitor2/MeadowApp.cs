@@ -18,11 +18,11 @@
 
         public MeadowApp()
         {
-            OnboardLed led = new OnboardLed(Device);
-            led.SetColor(RgbColor.Green);
-
             this.InitializeCharacterDisplay();
             this.InitializeBme280();
+
+            OnboardLed led = new OnboardLed(Device);
+            led.SetColor(RgbColor.Green);
         }
 
         private void InitializeCharacterDisplay()
@@ -40,7 +40,7 @@
                 rows: 4, columns: 20    // Adjust dimensions to fit your display
             );
 
-            this.display.Clear();
+            this.display.ClearLines();
 
             this.display.WriteLine("Conditions", 0);
             this.display.WriteLine("Initializing...", 1);
@@ -58,9 +58,8 @@
             );
 
             this.bme280.Subscribe(new FilterableObserver<AtmosphericConditionChangeResult, AtmosphericConditions>(
-                //h => Console.WriteLine($"Temp and pressure changed by threshold; new temp: {h.New.Temperature}, old: {h.Old.Temperature}"),
                 h => this.OutputConditions(h.New),
-                e => (Math.Abs(e.Delta.Temperature) > 0.2) || (Math.Abs(e.Delta.Pressure) > 5 || (Math.Abs(e.Delta.Humidity) > 0.1f))
+                e => (Math.Abs(e.Delta.Temperature.Value) > 0.2) || (Math.Abs(e.Delta.Pressure.Value) > 5 || (Math.Abs(e.Delta.Humidity.Value) > 0.1f))
             ));
 
             // classical .NET events can also be used:
@@ -70,13 +69,15 @@
             Console.WriteLine($"ChipID: {this.bme280.GetChipID():X2}");
 
             // get an initial reading
-            //this.ReadConditions().Wait();
+            this.ReadConditions().Wait();
 
             // start updating continuously
             this.bme280.StartUpdating(
                 temperatureSampleCount: Bme280.Oversample.OversampleX2,
                 pressureSampleCount: Bme280.Oversample.OversampleX16,
                 humiditySampleCount: Bme280.Oversample.OversampleX1);
+
+            Console.WriteLine("Temperature (BME280) Initialized");
         }
 
         private void AtmosphericConditionsChangedHandler(object _, AtmosphericConditionChangeResult e)
@@ -93,8 +94,8 @@
 
         private void OutputConditionsToDisplay(AtmosphericConditions conditions)
         {
-            float degreesCelsius = conditions.Temperature;
-            float degreesFaranheit = Temperature.ConvertCelsiusToFahrenheit(conditions.Temperature);
+            float degreesCelsius = conditions.Temperature.Value;
+            float degreesFaranheit = Temperature.ConvertCelsiusToFahrenheit(conditions.Temperature.Value);
 
             this.display.WriteLine($"Temp: {degreesCelsius:00.0} C {degreesFaranheit:00.0} F", 1);
 

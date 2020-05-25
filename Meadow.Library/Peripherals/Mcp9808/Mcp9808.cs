@@ -38,7 +38,7 @@
         /// <summary>
         /// The temperature, in degrees celsius (°C), from the last reading.
         /// </summary>
-        public float Temperature => this.GetTemperature().Temperature;
+        public float Temperature => this.GetTemperature().Temperature.Value;
 
         public event EventHandler<AtmosphericConditionChangeResult> Updated;
 
@@ -126,7 +126,7 @@
                 temp -= 256;
             }
 
-            this.Conditions = new AtmosphericConditions(temp, 0, 0);
+            this.Conditions = new AtmosphericConditions(temp, null, null);
 
             return AtmosphericConditions.From(this.Conditions);
         }

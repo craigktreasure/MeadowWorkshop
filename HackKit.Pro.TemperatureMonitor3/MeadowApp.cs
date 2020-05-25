@@ -52,7 +52,7 @@
             this.Display9808Temperature(this.mcp9808.GetTemperature());
             this.mcp9808.Subscribe(new FilterableObserver<AtmosphericConditionChangeResult, AtmosphericConditions>(
                 this.Mcp9808TemperatureUpdated,
-                e => Math.Abs(e.Delta.Temperature) > 0.1
+                e => Math.Abs(e.Delta.Temperature.Value) > 0.1
                 ));
             this.mcp9808.StartUpdating();
 
@@ -245,7 +245,7 @@
 
         private string GetTemperatureDisplayText(AtmosphericConditions conditions)
         {
-            float temp = conditions.Temperature;
+            float temp = conditions.Temperature.Value;
             char unit = this.displayInCelcius ? 'C' : 'F';
 
             if (!this.displayInCelcius)
