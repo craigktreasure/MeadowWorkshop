@@ -50,7 +50,7 @@
 
             this.mcp9808 = InitializeMcp9808TemperatureSensor();
             this.Display9808Temperature(this.mcp9808.GetTemperature());
-            this.mcp9808.Subscribe(new FilterableObserver<AtmosphericConditionChangeResult, AtmosphericConditions>(
+            this.mcp9808.Subscribe(new FilterableChangeObserver<AtmosphericConditionChangeResult, AtmosphericConditions>(
                 this.Mcp9808TemperatureUpdated,
                 e => Math.Abs(e.Delta.Temperature.Value) > 0.1
                 ));

@@ -11,7 +11,7 @@
     using System.Threading.Tasks;
 
     public class Mcp9808 :
-        FilterableObservableBase<AtmosphericConditionChangeResult, AtmosphericConditions>,
+        FilterableChangeObservableBase<AtmosphericConditionChangeResult, AtmosphericConditions>,
         ITemperatureSensor
     {
         private const I2cAddress defaultI2cAddress = I2cAddress.Adddress0x18;

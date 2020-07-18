@@ -57,7 +57,7 @@
                 Bme280.I2cAddress.Adddress0x77 //default
             );
 
-            this.bme280.Subscribe(new FilterableObserver<AtmosphericConditionChangeResult, AtmosphericConditions>(
+            this.bme280.Subscribe(new FilterableChangeObserver<AtmosphericConditionChangeResult, AtmosphericConditions>(
                 h => this.OutputConditions(h.New),
                 e => (Math.Abs(e.Delta.Temperature.Value) > 0.2) || (Math.Abs(e.Delta.Pressure.Value) > 5 || (Math.Abs(e.Delta.Humidity.Value) > 0.1f))
             ));
