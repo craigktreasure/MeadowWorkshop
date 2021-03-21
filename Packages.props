@@ -2,12 +2,12 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <!-- Global package references -->
-    <GlobalPackageReference Include="Nerdbank.GitVersioning" Version="3.1.91" Condition=" '$(EnableGitVersioning)' != 'false' " />
+    <GlobalPackageReference Include="Nerdbank.GitVersioning" Version="3.3.37" Condition=" '$(EnableGitVersioning)' != 'false' " />
 
     <!-- Global package versions. -->
-    <PackageReference Update="Meadow.Foundation"                               Version="0.17.0" />
-    <PackageReference Update="Meadow.Foundation.Displays.Lcd.CharacterDisplay" Version="0.7.13" />
-    <PackageReference Update="Meadow.Foundation.Displays.TftSpi"               Version="0.7.10" />
-    <PackageReference Update="Meadow.Foundation.Sensors.Atmospheric.Bme280"    Version="0.5.11" />
+    <PackageReference Update="Meadow.Foundation"                               Version="0.24.0" />
+    <PackageReference Update="Meadow.Foundation.Displays.Lcd.CharacterDisplay" Version="0.8.28" />
+    <PackageReference Update="Meadow.Foundation.Displays.TftSpi"               Version="0.7.40" />
+    <PackageReference Update="Meadow.Foundation.Sensors.Atmospheric.Bme280"    Version="0.5.39" />
   </ItemGroup>
 </Project>
