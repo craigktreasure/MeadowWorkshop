@@ -1,13 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <PropertyGroup>
+    <MeadowVersion>0.96.0</MeadowVersion>
+  </PropertyGroup>
+
   <ItemGroup>
     <!-- Global package references -->
-    <GlobalPackageReference Include="Nerdbank.GitVersioning" Version="3.3.37" Condition=" '$(EnableGitVersioning)' != 'false' " />
+    <GlobalPackageReference Include="Nerdbank.GitVersioning" Version="3.5.119" Condition=" '$(EnableGitVersioning)' != 'false' " />
 
     <!-- Global package versions. -->
-    <PackageReference Update="Meadow.Foundation"                               Version="0.24.0" />
-    <PackageReference Update="Meadow.Foundation.Displays.Lcd.CharacterDisplay" Version="0.8.28" />
-    <PackageReference Update="Meadow.Foundation.Displays.TftSpi"               Version="0.7.40" />
-    <PackageReference Update="Meadow.Foundation.Sensors.Atmospheric.Bme280"    Version="0.5.39" />
+    <PackageReference Update="IsExternalInit"                                  Version="1.0.3" />
+    <PackageReference Update="Meadow.Contracts"                                Version="$(MeadowVersion)" />
+    <PackageReference Update="Meadow.F7"                                       Version="$(MeadowVersion)" />
+    <PackageReference Update="Meadow.Foundation"                               Version="$(MeadowVersion)" />
+    <PackageReference Update="Meadow.Foundation.Displays.Lcd.CharacterDisplay" Version="$(MeadowVersion)" />
+    <PackageReference Update="Meadow.Foundation.Displays.TftSpi"               Version="$(MeadowVersion)" />
+    <PackageReference Update="Meadow.Foundation.Sensors.Atmospheric.Bme280"    Version="$(MeadowVersion)" />
+    <PackageReference Update="Meadow.Foundation.Sensors.Temperature.Mcp9808"   Version="$(MeadowVersion)" />
   </ItemGroup>
+
 </Project>

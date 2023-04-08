@@ -1,14 +1,19 @@
 ﻿<Project Sdk="Meadow.Sdk">
+
   <PropertyGroup>
-    <TargetFramework>net472</TargetFramework>
-    <OutputType>Exe</OutputType>
+    <TargetFramework>netstandard2.1</TargetFramework>
     <AssemblyName>App</AssemblyName>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
   </PropertyGroup>
+
   <ItemGroup>
+    <PackageReference Include="Meadow.F7" />
     <PackageReference Include="Meadow.Foundation" />
     <PackageReference Include="Meadow.Foundation.Displays.TftSpi" />
   </ItemGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\Meadow.Library\Meadow.Library.csproj" />
   </ItemGroup>
+
 </Project>
